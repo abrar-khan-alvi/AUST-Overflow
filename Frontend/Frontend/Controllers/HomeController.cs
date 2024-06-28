@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Frontend.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         private static string Bucket = "https://aust-overflow-default-rtdb.firebaseio.com";
