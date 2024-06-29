@@ -4,8 +4,6 @@
     ViewBag.Title = "Login";
 }
 
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -35,11 +33,12 @@
             <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
             <label class="form-check-label" for="form2Example31"> Remember me </label>
 
-
-            <!-- Forgot password link -->
             <div class="mb-3">
-                <a href="#!" class="link-primary">Forgot password?</a>
+                <p class="m-0 text-secondary text-center">
+                    Don't have an account? @Html.ActionLink("Sign Up", "SignUp", "Account", null, new { @class = "link-primary text-decoration-none" })
+                </p>
             </div>
+
 
             <!-- Submit button -->
             <div class="mb-3">

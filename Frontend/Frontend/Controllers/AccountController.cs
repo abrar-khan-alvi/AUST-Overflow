@@ -106,6 +106,8 @@ namespace Frontend.Controllers
                     if (!string.IsNullOrEmpty(token))
                     {
                         SignInUser(user.Email, token, false);
+                        Session["Email"] = model.Email;
+                        Session["Password"] = model.Password;
                         return RedirectToAction("UserProfile", "Account");
                     }
                     else
@@ -157,18 +159,14 @@ namespace Frontend.Controllers
 
         public async Task<ActionResult> UserProfile()
         {
-            if (!User.Identity.IsAuthenticated)
+            // Check if the session email is null
+            if (Session["Email"] == null)
             {
+                // Redirect to login if the session email is null
                 return RedirectToAction("Login", "Account");
             }
 
-            var emailClaim = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.Email);
-            if (emailClaim == null)
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
-            var email = emailClaim.Value;
+            var email = Session["Email"].ToString();
             var token = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.Authentication).Value;
 
             var firebaseClient = new FirebaseClient(DatabaseUrl, new FirebaseOptions
@@ -190,6 +188,7 @@ namespace Frontend.Controllers
 
             return View(userData);
         }
+
 
     }
 }

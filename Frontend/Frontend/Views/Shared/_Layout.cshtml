@@ -35,47 +35,53 @@
             <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Navbar brand -->
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand mt-2 mt-lg-0" })
+                @Html.ActionLink("AUST Overflow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand mt-2 mt-lg-0" })
 
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("SignUp", "SignUp", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                    @if (Session["Email"] == null)
+                    {
+
+                        <li class="nav-item">@Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("SignUp", "SignUp", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
                 </ul>
                 <!-- Left links -->
             </div>
             <!-- Collapsible wrapper -->
             <!-- Right elements -->
             <div class="d-flex align-items-center">
-                <!-- Avatar -->
-                <div class="dropdown">
-                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                       href="#"
-                       id="navbarDropdownMenuAvatar"
-                       role="button"
-                       data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                             class="rounded-circle"
-                             height="25"
-                             alt="Black and White Portrait of a Man"
-                             loading="lazy" />
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                        <li>
-                            @Html.ActionLink("My profile", "UserProfile", "Account", new { area = "" }, new { @class = "dropdown-item" })
-                        </li>
-                        <li>
-                            @Html.ActionLink("Settings", "Settings", "Account", new { area = "" }, new { @class = "dropdown-item" })
-                        </li>
-                        <li>
-                            @Html.ActionLink("Logout", "LogOff", "Account", new { area = "" }, new { @class = "dropdown-item" })
-                        </li>
-                    </ul>
-                </div>
+                @if (Session["Email"] != null)
+                {
+                    <!-- Avatar -->
+                    <div class="dropdown">
+                        <a class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                           href="#"
+                           id="navbarDropdownMenuAvatar"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            <img src="https://i.pinimg.com/564x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg"
+                                 class="rounded-circle"
+                                 height="40"
+                                 loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                            <li>
+                                @Html.ActionLink("My profile", "UserProfile", "Account", new { area = "" }, new { @class = "dropdown-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Settings", "Settings", "Account", new { area = "" }, new { @class = "dropdown-item" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Logout", "LogOff", "Account", new { area = "" }, new { @class = "dropdown-item" })
+                            </li>
+                        </ul>
+                    </div>
+                }
             </div>
             <!-- Right elements -->
         </div>
