@@ -4,44 +4,55 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>LoginViewModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+
+<div class="container d-flex justify-content-center ">
+    <div class="card border-light-subtle shadow-sm ">
+        <div class="form-horizontal p-3 p-md-4 p-xl-5">
+            <h2>Login</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <!-- Email input -->
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Email, new { @class = "form-label" })
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <!-- Password input -->
+            <div class="mb-3">
+                @Html.LabelFor(model => model.Password, new { @class = "form-label" })
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <!-- Remember me checkbox -->
+            <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+            <label class="form-check-label" for="form2Example31"> Remember me </label>
+
+
+            <!-- Forgot password link -->
+            <div class="mb-3">
+                <a href="#!" class="link-primary">Forgot password?</a>
+            </div>
+
+            <!-- Submit button -->
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Sign in</button>
             </div>
         </div>
-    </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    </div>
+
 </div>
+
+
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

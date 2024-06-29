@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "D:\\Aust_Overflow\\Frontend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|d:\\aust_overflow\\frontend\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|d:\\aust_overflow\\frontend\\frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|d:\\aust_overflow\\frontend\\frontend\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Views\\Account\\SignUp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Views\\Account\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\frontend\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\RouteConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\App_Start\\RouteConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\UserProfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Views\\Account\\UserProfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\UserProfileModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Models\\UserProfileModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\StartUp.Auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +41,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\StartUp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\StartUp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\SignUpModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,21 +62,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Frontend\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Frontend\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAUwBUAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T19:25:50.461Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -76,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Frontend\\Views\\Home\\Index.cshtml",
@@ -84,12 +91,11 @@
               "RelativeToolTip": "Frontend\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-28T05:29:42.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T05:29:42.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "Frontend\\App_Start\\RouteConfig.cs",
@@ -102,43 +108,69 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SignUp.cshtml",
-              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\SignUp.cshtml",
-              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Account\\SignUp.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-22T20:52:26.985Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Frontend\\Views\\Account\\Login.cshtml",
               "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "Frontend\\Views\\Account\\Login.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-22T19:21:43.168Z"
+              "WhenOpened": "2024-06-22T19:21:43.168Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
+              "Title": "UserProfileModel.cs",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\UserProfileModel.cs",
+              "RelativeDocumentMoniker": "Frontend\\Models\\UserProfileModel.cs",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\UserProfileModel.cs",
+              "RelativeToolTip": "Frontend\\Models\\UserProfileModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T12:50:53.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SignUp.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\SignUp.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Account\\SignUp.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-22T20:52:26.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserProfile.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\UserProfile.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\UserProfile.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\UserProfile.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Account\\UserProfile.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-28T13:03:07.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "StartUp.Auth.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\StartUp.Auth.cs",
               "RelativeDocumentMoniker": "Frontend\\App_Start\\StartUp.Auth.cs",
               "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\StartUp.Auth.cs",
               "RelativeToolTip": "Frontend\\App_Start\\StartUp.Auth.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T18:27:08.462Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "StartUp.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\StartUp.cs",
               "RelativeDocumentMoniker": "Frontend\\StartUp.cs",
@@ -150,45 +182,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Frontend\\Controllers\\AccountController.cs",
               "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Frontend\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAswIAAAAANAAAA",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAswKcAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T13:00:46.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T13:00:46.087Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Frontend\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Frontend\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAqAAAA",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAAAF4AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-22T13:14:24.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "SignUpModel.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\SignUpModel.cs",
               "RelativeDocumentMoniker": "Frontend\\Models\\SignUpModel.cs",
               "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\SignUpModel.cs",
               "RelativeToolTip": "Frontend\\Models\\SignUpModel.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAABUAAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T14:58:39.609Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Frontend\\Models\\LoginViewModel.cs",

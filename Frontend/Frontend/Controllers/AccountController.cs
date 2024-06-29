@@ -5,22 +5,21 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Frontend.Models;
+using BCrypt.Net;
+using System.Linq;
 
 namespace Frontend.Controllers
 {
-
     public class AccountController : Controller
     {
-        private static string DatabaseUrl = "https://aust-overflow-default-rtdb.firebaseio.com"; 
+        private static string DatabaseUrl = "https://aust-overflow-default-rtdb.firebaseio.com";
         private static string ApiKey = "AIzaSyAse483WtEgu5ODHwmJT_QwHzPBeN-tCMs";
 
-        // GET: Account
         public ActionResult SignUp()
         {
             return View();
@@ -32,6 +31,12 @@ namespace Frontend.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (model.Password != model.ConfirmPassword)
+                {
+                    ModelState.AddModelError(string.Empty, "Passwords do not match.");
+                    return View(model);
+                }
+
                 try
                 {
                     var auth = new FirebaseAuthProvider(new FirebaseConfig(ApiKey));
@@ -42,16 +47,25 @@ namespace Frontend.Controllers
                         AuthTokenAsyncFactory = () => Task.FromResult(firebaseAuthLink.FirebaseToken)
                     });
 
+                    //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Password);
+
+                    var user = new
+                    {
+                        model.Username,
+                        model.Name,
+                        model.Department,
+                        model.Email,
+                        Avatar = "",
+                        Reputation = 0,
+                        QuestionsAsked = "",
+                        AnswersProvided = "",
+                        CommentsMade = ""
+                    };
+
                     await firebaseClient
-                        .Child("Users")
+                        .Child("users")
                         .Child(firebaseAuthLink.User.LocalId)
-                        .PutAsync(new
-                        {
-                            model.Username,
-                            model.Name,
-                            model.Department,
-                            model.Email
-                        });
+                        .PutAsync(user);
 
                     ModelState.AddModelError(string.Empty, "Please verify your email before logging in.");
                 }
@@ -92,7 +106,7 @@ namespace Frontend.Controllers
                     if (!string.IsNullOrEmpty(token))
                     {
                         SignInUser(user.Email, token, false);
-                        return RedirectToLocal(returnUrl);
+                        return RedirectToAction("UserProfile", "Account");
                     }
                     else
                     {
@@ -140,5 +154,42 @@ namespace Frontend.Controllers
             authenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Login", "Account");
         }
+
+        public async Task<ActionResult> UserProfile()
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var emailClaim = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.Email);
+            if (emailClaim == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var email = emailClaim.Value;
+            var token = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.Authentication).Value;
+
+            var firebaseClient = new FirebaseClient(DatabaseUrl, new FirebaseOptions
+            {
+                AuthTokenAsyncFactory = () => Task.FromResult(token)
+            });
+
+            // Retrieve all users and filter by email
+            var users = await firebaseClient
+                .Child("users")
+                .OnceAsync<UserProfileModel>();
+
+            var userData = users.FirstOrDefault(u => u.Object.Email == email)?.Object;
+
+            if (userData == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            return View(userData);
+        }
+
     }
 }

@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Frontend",
+    "\\Frontend\\App_Start",
     "\\Frontend\\Controllers",
     "\\Frontend\\Models",
     "\\Frontend\\Views",

@@ -91,3 +91,5 @@ D:\Aust_Overflow\Frontend\Frontend\bin\System.Reactive.dll
 D:\Aust_Overflow\Frontend\Frontend\bin\Firebase.xml
 D:\Aust_Overflow\Frontend\Frontend\bin\LiteDB.xml
 D:\Aust_Overflow\Frontend\Frontend\bin\System.Reactive.xml
+D:\Aust_Overflow\Frontend\Frontend\bin\BCrypt.Net-Next.dll
+D:\Aust_Overflow\Frontend\Frontend\bin\BCrypt.Net-Next.xml
