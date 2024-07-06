@@ -1,0 +1,34 @@
+@{
+    ViewBag.Title = "Post Details";
+}
+
+<div class="container mt-4">
+    <h1 id="postTitle" class="mb-4"></h1>
+    <div id="postContent" class="mb-3"></div>
+    <div id="postTags" class="mb-3"></div>
+    <div id="postImage" class="mb-3"></div>
+
+    <h2 class="mt-5">Answers</h2>
+    <div id="answersContainer"></div>
+
+    <h3 class="mt-4">Your Answer</h3>
+    <form id="answerForm">
+        <div class="form-group">
+            <textarea class="form-control" id="newAnswerContent" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post Your Answer</button>
+    </form>
+
+    <a href="@Url.Action("Question", "AllQuestion")" class="btn btn-secondary mt-3">Back to Questions</a>
+</div>
+
+@section Scripts {
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="~/Custom_Contents//Post_Details.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPostDetails('@ViewBag.PostId');
+        });
+    </script>
+}

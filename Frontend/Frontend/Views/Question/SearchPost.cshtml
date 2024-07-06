@@ -1,0 +1,34 @@
+@{
+    ViewBag.Title = "Search";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Posts</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <!-- Include your Firebase configuration and initialization script here -->
+    <script src="path-to-your-firebase-init-script.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Search Posts</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search by question or taglines">
+            <div class="input-group-append">
+                <button class="btn btn-primary" onclick="searchPosts()">Search</button>
+            </div>
+        </div>
+        <div id="searchResults"></div>
+    </div>
+
+    <script src="~/Custom_Contents/Search_Post.js"></script>
+    <!-- Include Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

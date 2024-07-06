@@ -194,14 +194,6 @@ function savePostToFirebase(questionName, tagline, body, userId, imageUrl) {
         });
     })
     .then(() => {
-        // Create a 'comments' child node under the new postId
-        return firebase.database().ref(`posts/${newPostKey}/comments`).push({
-            userId: "userId2", // Example userId
-            name: "Jane Smith", // Example user name
-            comment: "This is an example comment."
-        });
-    })
-    .then(() => {
         hideLoader(); // Hide loader after successful submission
         alert('Post submitted successfully!');
         document.getElementById('questionForm').reset();

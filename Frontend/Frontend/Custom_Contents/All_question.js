@@ -32,12 +32,12 @@ function fetchAndDisplayPosts() {
             ).join('');
 
             const postElement = document.createElement('div');
-            postElement.className = 'col-md-12 mb-4';
+            postElement.className = 'col-md-6 mb-4';
             postElement.innerHTML = `
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="#" onclick="viewPost('${postId}'); return false;">${post.Title}</a>
+                            <a href="/Question/PostDetails/${postId}">${post.Title}</a>
                         </h5>
                         <p class="card-text">
                             ${tagsHtml}

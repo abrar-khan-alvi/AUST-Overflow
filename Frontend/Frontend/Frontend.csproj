@@ -314,6 +314,7 @@
     <Content Include="Assests\TP8xk516g2.gif" />
     <Content Include="Custom_Contents\All_question.css" />
     <Content Include="Custom_Contents\All_question.js" />
+    <Content Include="Custom_Contents\Post_Details.js" />
     <Content Include="Custom_Contents\Post_styles.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -331,6 +332,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Custom_Contents\Search_Post.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -370,6 +372,8 @@
     <Content Include="Views\Account\UserProfile.cshtml" />
     <Content Include="Views\Question\Post.cshtml" />
     <Content Include="Views\Question\AllQuestion.cshtml" />
+    <Content Include="Views\Question\PostDetails.cshtml" />
+    <Content Include="Views\Question\SearchPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

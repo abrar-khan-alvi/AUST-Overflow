@@ -24,5 +24,15 @@ namespace Frontend.Models
 
             return View();
         }
+        public ActionResult PostDetails(string id)
+        {
+            ViewBag.PostId = id;
+            return View();
+        }
+        public ActionResult SearchPost()
+        {
+
+            return View();
+        }
     }
 }

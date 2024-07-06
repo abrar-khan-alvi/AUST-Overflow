@@ -105,17 +105,36 @@ namespace Frontend.Controllers
                         // Sign in the user
                         SignInUser(user.Email, token, false);
 
-                        // Retrieve user details from Firebase
-                        var userId = user.LocalId;
-                        var userName = user.DisplayName; // Assuming the user's display name is set
+                        // Retrieve user details from Firebase Realtime Database
+                        var firebase = new FirebaseClient(
+                            DatabaseUrl,
+                            new FirebaseOptions
+                            {
+                                AuthTokenAsyncFactory = () => Task.FromResult(token)
+                            });
 
-                        // Store user details in session
-                        Session["Email"] = model.Email;
-                        Session["Password"] = model.Password;
-                        Session["UserId"] = userId;
-                        Session["UserName"] = userName;
+                        var users = await firebase
+                            .Child("users")
+                            .OnceAsync<User>();
 
-                        return RedirectToAction("UserProfile", "Account");
+                        var userData = users.FirstOrDefault(u => u.Object.Email == model.Email);
+
+                        if (userData != null)
+                        {
+                            var userId = userData.Key;
+                            var userName = userData.Object.DisplayName;
+
+                            // Store user details in session
+                            Session["Email"] = model.Email;
+                            Session["Password"] = model.Password;
+                            Session["UserId"] = userId;
+                            Session["UserName"] = userName;
+                            return RedirectToAction("UserProfile", "Account");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError(string.Empty, "User not found in the database.");
+                        }
                     }
                     else
                     {
