@@ -1,0 +1,25 @@
+@{
+    ViewBag.Title = "All Questions";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Feed</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Custom_Contents/Post_styles.css" />
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">All Questions</h1>
+        <div class="row" id="post-feed">
+            <!-- Posts will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="~/Custom_Contents/All_question.js"></script>
+</body>
+</html>

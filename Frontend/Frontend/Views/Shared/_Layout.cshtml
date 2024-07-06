@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title AUST Overflow</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -18,72 +18,63 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-black bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Container wrapper -->
         <div class="container-fluid">
-            <!-- Toggle button -->
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">AUST Overflow</a>
 
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Navbar brand -->
-                @Html.ActionLink("AUST Overflow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand mt-2 mt-lg-0" })
+                <!-- Spacer to push content to center -->
+                <div class="me-auto d-none d-lg-block"></div>
 
-                <!-- Left links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Centered nav items -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Questions", "AllQuestion", "Question", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Search", "Search", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+
+                <!-- Spacer to push content to center -->
+                <div class="me-auto d-none d-lg-block"></div>
+
+                <!-- Right elements -->
+                <div class="d-flex align-items-center">
                     @if (Session["Email"] == null)
                     {
-
-                        <li class="nav-item">@Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "nav-link" })</li>
-                        <li class="nav-item">@Html.ActionLink("SignUp", "SignUp", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">@Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("Signup", "SignUp", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                        </ul>
                     }
-                </ul>
-                <!-- Left links -->
-            </div>
-            <!-- Collapsible wrapper -->
-            <!-- Right elements -->
-            <div class="d-flex align-items-center">
-                @if (Session["Email"] != null)
-                {
-                    <!-- Avatar -->
-                    <div class="dropdown">
-                        <a class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                           href="#"
-                           id="navbarDropdownMenuAvatar"
-                           role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            <img src="https://i.pinimg.com/564x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg"
-                                 class="rounded-circle"
-                                 height="40"
-                                 loading="lazy" />
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                            <li>
-                                @Html.ActionLink("My profile", "UserProfile", "Account", new { area = "" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("Settings", "Settings", "Account", new { area = "" }, new { @class = "dropdown-item" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("Logout", "LogOff", "Account", new { area = "" }, new { @class = "dropdown-item" })
+                    else
+                    {
+                        <ul class="navbar-nav">
+                            <li class="nav-item">@Html.ActionLink("Ask Question", "Post", "Question", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://i.pinimg.com/564x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg" class="rounded-circle" height="22" alt="Avatar" loading="lazy" />
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li>@Html.ActionLink("My profile", "UserProfile", "Account", new { area = "" }, new { @class = "dropdown-item" })</li>
+                                    <li>@Html.ActionLink("Settings", "Settings", "Account", new { area = "" }, new { @class = "dropdown-item" })</li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>@Html.ActionLink("Logout", "LogOff", "Account", new { area = "" }, new { @class = "dropdown-item" })</li>
+                                </ul>
                             </li>
                         </ul>
-                    </div>
-                }
+                    }
+                </div>
+                <!-- Right elements -->
             </div>
-            <!-- Right elements -->
+            <!-- Collapsible wrapper -->
         </div>
         <!-- Container wrapper -->
     </nav>

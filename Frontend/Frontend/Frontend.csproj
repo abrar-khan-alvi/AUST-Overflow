@@ -302,6 +302,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Models\SignUpModel.cs" />
     <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -311,6 +312,9 @@
     <Content Include="Assests\Animation - 1719581786803.gif" />
     <Content Include="Assests\logo reg.png" />
     <Content Include="Assests\TP8xk516g2.gif" />
+    <Content Include="Custom_Contents\All_question.css" />
+    <Content Include="Custom_Contents\All_question.js" />
+    <Content Include="Custom_Contents\Post_styles.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -364,6 +368,8 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Account\UserProfile.cshtml" />
+    <Content Include="Views\Question\Post.cshtml" />
+    <Content Include="Views\Question\AllQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

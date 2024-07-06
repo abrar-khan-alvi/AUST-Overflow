@@ -3,20 +3,52 @@
   "WorkspaceRootPath": "D:\\Aust_Overflow\\Frontend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\UserProfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Views\\Account\\UserProfile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|d:\\aust_overflow\\frontend\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|d:\\aust_overflow\\frontend\\frontend\\views\\question\\allquestion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\question\\allquestion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|d:\\aust_overflow\\frontend\\frontend\\custom_contents\\all_question.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\custom_contents\\all_question.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|d:\\aust_overflow\\frontend\\frontend\\custom_contents\\all_question.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\custom_contents\\all_question.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\frontend\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\frontend\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\frontend\\custom_contents\\post_styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\custom_contents\\post_styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\frontend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\frontend\\views\\question\\post.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\question\\post.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\frontend\\views\\account\\userprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\account\\userprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\UserProfileModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Models\\UserProfileModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -29,14 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\RouteConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\App_Start\\RouteConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\UserProfileModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|solutionrelative:Frontend\\Models\\UserProfileModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85ED1379-6304-4737-BCAD-DD3E70E82556}|Frontend\\Frontend.csproj|D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\StartUp.Auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,17 +86,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Frontend\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Frontend\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAUwBUAAAAjAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T19:25:50.461Z",
               "IsPinned": true
@@ -83,20 +107,136 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAnAAAA",
+              "DocumentIndex": 3,
+              "Title": "All_question.css",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Custom_Contents\\All_question.css",
+              "RelativeDocumentMoniker": "Frontend\\Custom_Contents\\All_question.css",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Custom_Contents\\All_question.css",
+              "RelativeToolTip": "Frontend\\Custom_Contents\\All_question.css",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-06T11:37:33.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "All_question.js",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Custom_Contents\\All_question.js",
+              "RelativeDocumentMoniker": "Frontend\\Custom_Contents\\All_question.js",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Custom_Contents\\All_question.js",
+              "RelativeToolTip": "Frontend\\Custom_Contents\\All_question.js",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAwCIAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-06T11:36:44.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AllQuestion.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Question\\AllQuestion.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Question\\AllQuestion.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Question\\AllQuestion.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Question\\AllQuestion.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-28T05:29:42.01Z",
+              "WhenOpened": "2024-07-06T11:34:22.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SignUp.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\SignUp.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Account\\SignUp.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAABbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-22T20:52:26.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserProfile.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\UserProfile.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\UserProfile.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\UserProfile.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Account\\UserProfile.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-28T13:03:07.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "StartUp.Auth.cs",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\StartUp.Auth.cs",
+              "RelativeDocumentMoniker": "Frontend\\App_Start\\StartUp.Auth.cs",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\StartUp.Auth.cs",
+              "RelativeToolTip": "Frontend\\App_Start\\StartUp.Auth.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T18:27:08.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAIwMQAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T13:00:46.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACgAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-22T13:14:24.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "Post_styles.css",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Custom_Contents\\Post_styles.css",
+              "RelativeDocumentMoniker": "Frontend\\Custom_Contents\\Post_styles.css",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Custom_Contents\\Post_styles.css",
+              "RelativeToolTip": "Frontend\\Custom_Contents\\Post_styles.css",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAQwHMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-05T15:05:17.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Post.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Question\\Post.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Question\\Post.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Question\\Post.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Question\\Post.cshtml",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAADMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-04T17:41:02.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "Frontend\\App_Start\\RouteConfig.cs",
@@ -109,69 +249,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Account\\Login.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACUAAACXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-22T19:21:43.168Z",
+              "Title": "QuestionController.cs",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\QuestionController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\QuestionController.cs",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\QuestionController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\QuestionController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAADwvxUAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T17:46:40.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "UserProfileModel.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\UserProfileModel.cs",
               "RelativeDocumentMoniker": "Frontend\\Models\\UserProfileModel.cs",
               "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\UserProfileModel.cs",
               "RelativeToolTip": "Frontend\\Models\\UserProfileModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA0AAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-28T12:50:53.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SignUp.cshtml",
-              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\SignUp.cshtml",
-              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\SignUp.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Account\\SignUp.cshtml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAE4AAABbAAAA",
+              "DocumentIndex": 12,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-22T20:52:26.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T19:21:43.168Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserProfile.cshtml",
-              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\UserProfile.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Account\\UserProfile.cshtml",
-              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Account\\UserProfile.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Account\\UserProfile.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-28T13:03:07.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "StartUp.Auth.cs",
-              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\StartUp.Auth.cs",
-              "RelativeDocumentMoniker": "Frontend\\App_Start\\StartUp.Auth.cs",
-              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\App_Start\\StartUp.Auth.cs",
-              "RelativeToolTip": "Frontend\\App_Start\\StartUp.Auth.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBgAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T18:27:08.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "StartUp.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\StartUp.cs",
               "RelativeDocumentMoniker": "Frontend\\StartUp.cs",
@@ -183,33 +297,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAALgAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T13:00:46.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEUAAAAyAAAA",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Aust_Overflow\\Frontend\\Frontend\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-22T13:14:24.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T05:29:42.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "SignUpModel.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\SignUpModel.cs",
               "RelativeDocumentMoniker": "Frontend\\Models\\SignUpModel.cs",
@@ -221,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\Aust_Overflow\\Frontend\\Frontend\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Frontend\\Models\\LoginViewModel.cs",

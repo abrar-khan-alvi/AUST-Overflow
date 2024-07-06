@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Frontend.Models;
-using BCrypt.Net;
 using System.Linq;
 
 namespace Frontend.Controllers
@@ -46,8 +45,6 @@ namespace Frontend.Controllers
                     {
                         AuthTokenAsyncFactory = () => Task.FromResult(firebaseAuthLink.FirebaseToken)
                     });
-
-                    //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Password);
 
                     var user = new
                     {
@@ -105,9 +102,19 @@ namespace Frontend.Controllers
 
                     if (!string.IsNullOrEmpty(token))
                     {
+                        // Sign in the user
                         SignInUser(user.Email, token, false);
+
+                        // Retrieve user details from Firebase
+                        var userId = user.LocalId;
+                        var userName = user.DisplayName; // Assuming the user's display name is set
+
+                        // Store user details in session
                         Session["Email"] = model.Email;
                         Session["Password"] = model.Password;
+                        Session["UserId"] = userId;
+                        Session["UserName"] = userName;
+
                         return RedirectToAction("UserProfile", "Account");
                     }
                     else
@@ -117,12 +124,20 @@ namespace Frontend.Controllers
                 }
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError(string.Empty, ex.Message);
+                    if (ex.Message.Contains("INVALID_PASSWORD") || ex.Message.Contains("EMAIL_NOT_FOUND"))
+                    {
+                        ModelState.AddModelError(string.Empty, "User not found. Please register.");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, ex.Message);
+                    }
                 }
             }
 
             return View(model);
         }
+
 
         private void SignInUser(string email, string token, bool isPersistent)
         {
@@ -154,6 +169,11 @@ namespace Frontend.Controllers
             var ctx = Request.GetOwinContext();
             var authenticationManager = ctx.Authentication;
             authenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+
+            // Clear the session
+            Session.Clear();
+            Session.Abandon();
+
             return RedirectToAction("Login", "Account");
         }
 
@@ -188,7 +208,5 @@ namespace Frontend.Controllers
 
             return View(userData);
         }
-
-
     }
 }
