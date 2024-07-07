@@ -14,17 +14,37 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
     <!-- Include your Firebase configuration and initialization script here -->
     <script src="path-to-your-firebase-init-script.js"></script>
+    <style>
+        .search-container {
+            margin-top: 50px;
+        }
+
+            .search-container h1 {
+                margin-bottom: 30px;
+            }
+
+            .search-container .input-group {
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+
+        .search-results .content-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Search Posts</h1>
+    <div class="container search-container">
+        <h1>Search Questions</h1>
         <div class="input-group mb-3">
             <input type="text" class="form-control" id="searchInput" placeholder="Search by question or taglines">
             <div class="input-group-append">
-                <button class="btn btn-primary" onclick="searchPosts()">Search</button>
+                <button class="btn btn-primary" onclick="searchPosts()">Submit</button>
             </div>
         </div>
-        <div id="searchResults"></div>
+        <div id="searchResults" class="search-results"></div>
     </div>
 
     <script src="~/Custom_Contents/Search_Post.js"></script>

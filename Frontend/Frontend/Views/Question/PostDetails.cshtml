@@ -1,34 +1,107 @@
 @{
     ViewBag.Title = "Post Details";
+    var userId = Session["UserId"];
 }
+<style>
+    .post-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .user-info h5 {
+        margin-bottom: 0;
+    }
+
+    .content {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .form-group textarea {
+        width: 100%;
+        resize: vertical;
+    }
+
+    .answer {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .comment {
+        margin-left: 20px;
+        border: 1px solid #eee;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .btn-link {
+        padding: 0;
+    }
+
+    .comment-form {
+        margin-left: 20px;
+    }
+</style>
 
 <div class="container mt-4">
-    <h1 id="postTitle" class="mb-4"></h1>
-    <div id="postContent" class="mb-3"></div>
-    <div id="postTags" class="mb-3"></div>
-    <div id="postImage" class="mb-3"></div>
-
-    <h2 class="mt-5">Answers</h2>
-    <div id="answersContainer"></div>
-
-    <h3 class="mt-4">Your Answer</h3>
-    <form id="answerForm">
-        <div class="form-group">
-            <textarea class="form-control" id="newAnswerContent" rows="4" required></textarea>
+    <div class="post-header d-flex align-items-center mb-4">
+        <div class="user-info">
+            <h5 id="postAuthor" class="mb-1">User Name</h5>
+            <h1 id="postTitle" class="mb-0">Question Name</h1>
+            <div id="postTags" class="mt-2">Tag lines</div>
         </div>
-        <button type="submit" class="btn btn-primary">Post Your Answer</button>
-    </form>
+    </div>
 
-    <a href="@Url.Action("Question", "AllQuestion")" class="btn btn-secondary mt-3">Back to Questions</a>
+    <div id="postContent" class="content mb-3"></div>
+    <div id="postImage" class="mb-3">Image</div>
+    <div id="voteSection" class="mb-3">
+        <span id="upvoteCount">0</span> Upvotes
+        <span id="downvoteCount">0</span> Downvotes
+        @if (userId != null)
+        {
+            <button class="btn btn-success" onclick="vote('upvote')">Upvote</button>
+            <button class="btn btn-danger" onclick="vote('downvote')">Downvote</button>
+        }
+    </div>
+
+    @if (userId != null)
+    {
+        <h3 class="mt-4">Your Answer</h3>
+        <form id="answerForm">
+            <div class="form-group">
+                <textarea class="form-control" id="newAnswerContent" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Post Your Answer</button>
+        </form>
+    }
+    else
+    {
+        <div class="alert alert-warning mt-4">
+            You must be logged in to post an answer.
+        </div>
+    }
+
+    <div id="answersContainer" class="mt-5">
+        <h2>Loaded answer comments</h2>
+        <!-- Answers and comments will be loaded here -->
+    </div>
+
+    <a href="@Url.Action("AllQuestion", "Question")" class="btn btn-secondary mt-3">Back to Questions</a>
 </div>
 
 @section Scripts {
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
-    <script src="~/Custom_Contents//Post_Details.js"></script>
+    <script src="~/Custom_Contents/Post_Details.js"></script>
     <script>
+        // Embed the session user ID into a JavaScript variable
+        var loggedInUserId = '@(userId ?? "null")';
+
+        // Initialize the post details when the DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            loadPostDetails('@ViewBag.PostId');
+            initializePostDetails('@ViewBag.PostId');
         });
     </script>
 }

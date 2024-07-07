@@ -14,11 +14,6 @@ if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
 
-// Initialize Firebase
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
-
 function searchPosts() {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const postsRef = firebase.database().ref('posts');
@@ -36,18 +31,14 @@ function searchPosts() {
                 const taglines = post.taglines ? post.taglines.toLowerCase() : '';
                 const titleMatch = title.includes(searchInput);
                 const taglinesMatch = taglines.includes(searchInput);
-
                 if (titleMatch || taglinesMatch) {
                     resultsFound = true;
                     const postElement = document.createElement('div');
-                    postElement.classList.add('card', 'mb-3');
+                    postElement.classList.add('content-box');
                     postElement.innerHTML = `
-                        <div class="card-body">
-                            <h5 class="card-title">${post.Title}</h5>
-                            <p class="card-text">${post.content}</p>
-                            <p class="card-text"><small class="text-muted">${post.taglines}</small></p>
-                            <a href="/Question/PostDetails/${postId}" class="btn btn-primary">View Post</a>
-                        </div>
+                        <h5>${post.Title}</h5>
+                        <p><small>${post.taglines}</small></p>
+                        <a href="/Question/PostDetails/${postId}" class="btn btn-primary">View Post</a>
                     `;
                     searchResultsContainer.appendChild(postElement);
                 }
