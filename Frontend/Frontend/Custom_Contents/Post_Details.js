@@ -28,16 +28,34 @@ function initializePostDetails(postId) {
         });
     }
 
-    // Add event listeners for voting buttons
-    const upvoteButton = document.querySelector('button[onclick="vote(\'upvote\')"]');
-    const downvoteButton = document.querySelector('button[onclick="vote(\'downvote\')"]');
+    // Fetch post data including voting status
+    const postRef = firebase.database().ref('posts/' + postId);
+    postRef.once('value', (snapshot) => {
+        const post = snapshot.val();
+        if (post) {
+            // Check if user has upvoted or downvoted
+            let hasUpvoted = false;
+            let hasDownvoted = false;
 
-    if (upvoteButton) {
-        upvoteButton.onclick = () => vote('upvote');
-    }
-    if (downvoteButton) {
-        downvoteButton.onclick = () => vote('downvote');
-    }
+            if (post.upvote && loggedInUserId) {
+                hasUpvoted = Object.values(post.upvote).includes(loggedInUserId);
+            }
+            if (post.downvote && loggedInUserId) {
+                hasDownvoted = Object.values(post.downvote).includes(loggedInUserId);
+            }
+            console.log(hasUpvoted, hasDownvoted);
+            // Update button colors based on voting status
+            updateVoteButtons(hasUpvoted, hasDownvoted);
+        } else {
+            console.error('Post not found');
+            alert('Post not found');
+            window.location.href = '/';
+        }
+    }).catch((error) => {
+        console.error("Error fetching post data:", error);
+        alert('Error fetching post data');
+        window.location.href = '/';
+    });
 }
 
 function loadPostDetails(postId) {
@@ -60,13 +78,15 @@ function loadPostDetails(postId) {
 
             document.getElementById('postTitle').innerText = post.Title;
             document.getElementById('postContent').innerHTML = post.content;
-            document.getElementById('upvoteCount').innerText = post.upvote || 0;
-            document.getElementById('downvoteCount').innerText = post.downvote || 0;
+
+            // Count upvotes and downvotes
+            countVotes(postId, 'upvote', 'upvoteCount');
+            countVotes(postId, 'downvote', 'downvoteCount');
 
             // Create tags HTML
-            const tagsHtml = post.taglines.split(',').map(tag =>
+            const tagsHtml = post.taglines ? post.taglines.split(',').map(tag =>
                 `<span class="badge badge-primary mr-1">${tag.trim()}</span>`
-            ).join('');
+            ).join('') : '';
             document.getElementById('postTags').innerHTML = tagsHtml;
 
             // Display image if available
@@ -82,6 +102,16 @@ function loadPostDetails(postId) {
             alert('Post not found');
             window.location.href = '/';
         }
+    });
+}
+
+function countVotes(postId, voteType, elementId) {
+    const votesRef = firebase.database().ref('posts/' + postId + '/' + voteType);
+
+    votesRef.on('value', (snapshot) => {
+        const votes = snapshot.val();
+        const voteCount = votes ? Object.keys(votes).length : 0;
+        document.getElementById(elementId).innerText = voteCount;
     });
 }
 
@@ -123,35 +153,33 @@ function loadAnswers(postId) {
                             </div>
                             <p class="mb-3">${answer.answer}</p>
                             <div id="commentsContainer-${answerId}"></div>
-                            <form class="comment-form mt-3" id="commentForm-${answerId}" style="display: none;" onsubmit="postComment(event, '${postId}', '${answerId}')">
+                            <form class="comment-form mt-2" id="commentForm-${answerId}" style="display:none;" onsubmit="postComment(event, '${postId}', '${answerId}')">
                                 <div class="form-group">
                                     <textarea class="form-control" id="newCommentContent-${answerId}" rows="2" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
+                                <button type="submit" class="btn btn-sm btn-primary">Post Comment</button>
                             </form>
                         `;
-                        }
-                        answersContent.appendChild(answerElement);
 
-                        // Load comments for each answer
-                        loadComments(postId, answerId);
+                            answersContent.appendChild(answerElement);
+                            loadComments(postId, answerId);
+                        }
                     })
                     .catch((error) => {
-                        console.error("Error fetching user data for answer:", error);
+                        console.error("Error fetching user data:", error);
                     });
             });
         } else {
-            answersContent.innerHTML = '<p>No answers yet.</p>';
+            answersContent.innerHTML = '<p>No answers yet. Be the first to answer!</p>';
         }
     });
 }
 
 function loadComments(postId, answerId) {
     const commentsRef = firebase.database().ref('posts/' + postId + '/answers/' + answerId + '/comments');
-
+    const commentsContainer = document.getElementById('commentsContainer-' + answerId);
     commentsRef.on('value', (snapshot) => {
         const comments = snapshot.val();
-        const commentsContainer = document.getElementById('commentsContainer-' + answerId);
         commentsContainer.innerHTML = '';
 
         if (comments) {
@@ -161,65 +189,28 @@ function loadComments(postId, answerId) {
                     .then((userSnapshot) => {
                         const user = userSnapshot.val();
                         const commentElement = document.createElement('div');
-                        commentElement.classList.add('ms-4', 'mt-3');
-                        let userHtml = '';
-                        if (user && user.Username) {
-                            userHtml = `<h5 class="mb-1">${user.Username}</h5>`;
+                        commentElement.classList.add('mt-2', 'mb-2');
 
-                            commentElement.innerHTML = `
-                            ${userHtml}
-                            <p class="mb-2">${comment.content}</p>
-                        `;
-                        }
+                        commentElement.innerHTML = `
+                        <p class="mb-1"><strong>${user.Username}</strong>: ${comment.content}</p>
+                    `;
+
                         commentsContainer.appendChild(commentElement);
                     })
                     .catch((error) => {
-                        console.error("Error fetching user data for comment:", error);
+                        console.error("Error fetching user data:", error);
                     });
             });
-        } else {
-            commentsContainer.innerHTML = '<p>No comments yet.</p>';
         }
     });
 }
 
 function showCommentForm(postId, answerId) {
-    if (loggedInUserId === "null") {
-        alert('You must be logged in to post a comment.');
-        return;
-    }
-    const commentForm = document.getElementById('commentForm-' + answerId);
-    commentForm.style.display = commentForm.style.display === 'none' ? 'block' : 'none';
-}
-
-function postAnswer(postId) {
-    if (loggedInUserId === "null") {
-        alert('You must be logged in to post an answer.');
-        return;
-    }
-
-    const newAnswerContent = document.getElementById('newAnswerContent').value;
-    const answersRef = firebase.database().ref('posts/' + postId + '/answers');
-
-    const newAnswerRef = answersRef.push();
-    newAnswerRef.set({
-        answer: newAnswerContent,
-        userId: loggedInUserId
-    }).then(() => {
-        document.getElementById('newAnswerContent').value = '';
-    }).catch((error) => {
-        console.error("Error posting answer:", error);
-    });
+    document.getElementById('commentForm-' + answerId).style.display = 'block';
 }
 
 function postComment(event, postId, answerId) {
     event.preventDefault();
-
-    if (loggedInUserId === "null") {
-        alert('You must be logged in to post a comment.');
-        return;
-    }
-
     const newCommentContent = document.getElementById('newCommentContent-' + answerId).value;
     const commentsRef = firebase.database().ref('posts/' + postId + '/answers/' + answerId + '/comments');
 
@@ -234,6 +225,7 @@ function postComment(event, postId, answerId) {
     });
 }
 
+// Function to handle voting
 function vote(type) {
     if (loggedInUserId === "null") {
         alert('You must be logged in to vote.');
@@ -241,15 +233,76 @@ function vote(type) {
     }
 
     const postRef = firebase.database().ref('posts/' + currentPostId);
-    postRef.transaction((post) => {
-        if (post) {
-            if (type === 'upvote') {
-                post.upvote = (post.upvote || 0) + 1;
-            } else if (type === 'downvote') {
-                post.downvote = (post.downvote || 0) + 1;
-            }
+    const upvoteRef = postRef.child('upvote');
+    const downvoteRef = postRef.child('downvote');
+
+    postRef.once('value', (snapshot) => {
+        const post = snapshot.val();
+        const userId = loggedInUserId;
+
+        let hasUpvoted = false;
+        let hasDownvoted = false;
+
+        // Check if the user has already upvoted or downvoted
+        if (post.upvote) {
+            hasUpvoted = Object.values(post.upvote).includes(userId);
         }
-        return post;
+        if (post.downvote) {
+            hasDownvoted = Object.values(post.downvote).includes(userId);
+        }
+
+        // Remove the user from upvote and downvote nodes if necessary
+        if (hasUpvoted) {
+            upvoteRef.orderByValue().equalTo(userId).once('child_added', (snapshot) => {
+                snapshot.ref.remove();
+            });
+        }
+        if (hasDownvoted) {
+            downvoteRef.orderByValue().equalTo(userId).once('child_added', (snapshot) => {
+                snapshot.ref.remove();
+            });
+        }
+
+        // Add the user to the appropriate vote node
+        if (type === 'upvote' && !hasUpvoted) {
+            upvoteRef.push(userId);
+        } else if (type === 'downvote' && !hasDownvoted) {
+            downvoteRef.push(userId);
+        }
+
+        // Update button colors based on the user's vote
+        updateVoteButtons(type, hasUpvoted, hasDownvoted);
+    }).catch((error) => {
+        console.error("Error handling vote:", error);
     });
 }
+
+// Function to update button colors based on the user's vote
+function updateVoteButtons(type, hadUpvoted, hadDownvoted) {
+    const upvoteButton = document.getElementById('upvoteButton');
+    const downvoteButton = document.getElementById('downvoteButton');
+
+    if (type === 'upvote') {
+        if (hadUpvoted) {
+            upvoteButton.classList.add('btn-outline-success');
+            upvoteButton.classList.remove('btn-success');
+        } else {
+            upvoteButton.classList.remove('btn-outline-success');
+            upvoteButton.classList.add('btn-success');
+            downvoteButton.classList.remove('btn-danger');
+            downvoteButton.classList.add('btn-outline-danger');
+        }
+    } else if (type === 'downvote') {
+        if (hadDownvoted) {
+            downvoteButton.classList.add('btn-outline-danger');
+            downvoteButton.classList.remove('btn-danger');
+        } else {
+            downvoteButton.classList.remove('btn-outline-danger');
+            downvoteButton.classList.add('btn-danger');
+            upvoteButton.classList.remove('btn-success');
+            upvoteButton.classList.add('btn-outline-success');
+        }
+    }
+}
+
 

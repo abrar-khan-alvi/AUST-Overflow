@@ -22,28 +22,24 @@
         <!-- Container wrapper -->
         <div class="container-fluid">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="@Url.Action("Index", "Home")">AUST Overflow</a>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <img src="~/Assests/logonav.png" style="width:35px;" alt="Logo" />
+            </a>
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Spacer to push content to center -->
-                <div class="me-auto d-none d-lg-block"></div>
 
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarText">
                 <!-- Centered nav items -->
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Questions", "AllQuestion", "Question", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Search", "SearchPost", "Question", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
-
-                <!-- Spacer to push content to center -->
-                <div class="me-auto d-none d-lg-block"></div>
 
                 <!-- Right elements -->
                 <div class="d-flex align-items-center">
@@ -72,19 +68,48 @@
                         </ul>
                     }
                 </div>
-                <!-- Right elements -->
             </div>
-            <!-- Collapsible wrapper -->
         </div>
-        <!-- Container wrapper -->
     </nav>
     <!-- Navbar -->
 
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - AUST Overflow</p>
+        <footer class="text- pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>AUST Overflow</h5>
+                        <p>Helping students at AUST connect, share, and learn together.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="@Url.Action("Index", "Home")" class="text-dark">Home</a></li>
+                            <li><a href="@Url.Action("AllQuestion", "Question")" class="text-dark">Questions</a></li>
+                            <li><a href="@Url.Action("Post", "Question")" class="text-dark">Ask Question</a></li>
+                            <li><a href="@Url.Action("Contact", "Home")" class="text-dark">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:support@austoverflow.com" class="text-dark">support@austoverflow.com</a></li>
+                            <li><i class="fas fa-phone"></i> <span class="text-dark">+1 234 567 890</span></li>
+                            <li>
+                                <a href="#" class="text-dark me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-dark me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-dark me-2"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="text-dark"><i class="fab fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center py-3">
+                    <p>&copy; @DateTime.Now.Year - AUST Overflow. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
     </div>
 

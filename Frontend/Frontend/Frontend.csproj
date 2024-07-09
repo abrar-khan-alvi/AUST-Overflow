@@ -309,8 +309,13 @@
     <Compile Include="StartUp.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assests\433452884_2062902010762226_9214119439254119489_n.jpg" />
+    <Content Include="Assests\441319214_916766196914539_227074261234279834_n.jpg" />
     <Content Include="Assests\Animation - 1719581786803.gif" />
+    <Content Include="Assests\bg.jpg" />
+    <Content Include="Assests\download.jpeg" />
     <Content Include="Assests\logo reg.png" />
+    <Content Include="Assests\logonav.png" />
     <Content Include="Assests\TP8xk516g2.gif" />
     <Content Include="Custom_Contents\All_question.css" />
     <Content Include="Custom_Contents\All_question.js" />
@@ -374,6 +379,8 @@
     <Content Include="Views\Question\AllQuestion.cshtml" />
     <Content Include="Views\Question\PostDetails.cshtml" />
     <Content Include="Views\Question\SearchPost.cshtml" />
+    <Content Include="Views\Question\RecentPosts.cshtml" />
+    <Content Include="Views\Question\EditPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

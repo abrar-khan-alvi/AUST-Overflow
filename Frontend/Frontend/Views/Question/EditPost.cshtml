@@ -1,0 +1,119 @@
+﻿@{
+    var userId = Session["UserId"];
+    var userName = Session["UserName"];
+    var postId = Request.QueryString["postId"];
+    ViewBag.Title = "Edit Post";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="https://cdn.tiny.cloud/1/ekmrv3s60wmxq6wsj7471uw5q6f3falk5lq4x0t640o58li8/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Edit Post</h1>
+        <form id="editPostForm">
+            <div class="form-group">
+                <label for="editQuestionName">Question:</label>
+                <input type="text" class="form-control" id="editQuestionName" placeholder="Enter question name">
+            </div>
+            <div class="form-group">
+                <label for="editTagline">Taglines:</label>
+                <input type="text" class="form-control" id="editTagline" placeholder="e.g., javascript, html, css" required>
+            </div>
+            <div class="form-group">
+                <label for="editBody">Discussion:</label>
+                <textarea id="editBody" placeholder="Write Text"></textarea>
+            </div>
+            <div id="postImage"></div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+
+    <script>
+        // Initialize TinyMCE
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'code',
+            toolbar: 'undo redo | blocks | fontfamily fontsize | bold italic underline strikethrough | code | addcomment showcomments | align lineheight | checklist numlist bullist indent outdent | removeformat',
+            height: 400,
+            setup: function (editor) {
+                editor.on('init', function () {
+                    // Optionally, do something when the editor is initialized
+                });
+            }
+        });
+
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAse483WtEgu5ODHwmJT_QwHzPBeN-tCMs",
+            authDomain: "aust-overflow.firebaseapp.com",
+            databaseURL: "https://aust-overflow-default-rtdb.firebaseio.com",
+            projectId: "aust-overflow",
+            storageBucket: "aust-overflow.appspot.com",
+            messagingSenderId: "597727996516",
+            appId: "1:597727996516:web:b61deb25e126e0ecd4cd71"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var postId = '@postId';
+
+        function loadPostData(postId) {
+            const postRef = firebase.database().ref('posts/' + postId);
+            postRef.once('value').then((snapshot) => {
+                const post = snapshot.val();
+                if (post) {
+                    document.getElementById('editQuestionName').value = post.Title || '';
+                    tinymce.get('editBody').setContent(post.content || '');
+                    document.getElementById('editTagline').value = post.taglines || '';
+
+                    // Display image if available
+                    if (post.imageUrl) {
+                        document.getElementById('postImage').innerHTML = `<img src="${post.imageUrl}" class="img-fluid mt-3" alt="Post image" style="max-width:50%">`;
+                    } else {
+                        document.getElementById('postImage').style.display = 'none';
+                    }
+                } else {
+                    alert('Post not found');
+                    window.location.href = '/'; // Redirect to home page if post not found
+                }
+            }).catch((error) => {
+                console.error("Error loading post:", error);
+                alert('Error loading post: ' + error.message);
+            });
+        }
+
+        document.getElementById('editPostForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const updatedTitle = document.getElementById('editQuestionName').value;
+            const updatedTaglines = document.getElementById('editTagline').value;
+            const updatedContent = tinymce.get('editBody').getContent();
+
+            firebase.database().ref('posts/' + postId).update({
+                Title: updatedTitle,
+                taglines: updatedTaglines,
+                content: updatedContent
+            })
+            .then(function() {
+                alert('Post updated successfully.');
+                window.location.href = '/userPosts'; // Redirect back to the user's posts page
+            })
+            .catch(function(error) {
+                alert('Error updating post: ' + error.message);
+            });
+        });
+
+        // Load the post data when the page loads
+        loadPostData(postId);
+    </script>
+</body>
+</html>

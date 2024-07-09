@@ -1,35 +1,113 @@
 ﻿@model Frontend.Models.UserProfileModel
 @{
     ViewBag.Title = "User Profile";
+    var userId = Session["UserId"]; // Get the UserId from the session
 }
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex align-items-center mb-4">
-                        <img src="https://i.pinimg.com/564x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg"  alt="Avatar" class="rounded-circle me-3" width="80" height="80" />
-                        <div>
-                            <h2 class="mb-0">@Model.Username</h2>
-                            <p class="text-muted mb-0">Reputation: @Model.Reputation</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5>Personal Info</h5>
-                            <p><strong>Name:</strong> @Model.Name</p>
-                            <p><strong>Department:</strong> @Model.Department</p>
-                            <p><strong>Email:</strong> @Model.Email</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h5>Activity</h5>
-                            <p><strong>Total Questions:</strong> @Model.QuestionsAsked</p>
-                            <p><strong>Total Answers:</strong> @Model.AnswersProvided</p>
-                            <p><strong>Total Comments:</strong> @Model.CommentsMade</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-8 text-center">
+            <div class="position-relative d-inline-block">
+                @if (string.IsNullOrEmpty(Model.Avatar))
+                {
+                    <img src="https://i.pinimg.com/564x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg" alt="Default Avatar" class="rounded-circle mb-3" width="150" height="150" id="profileImage" />
+                }
+                else
+                {
+                    <img src="@Model.Avatar" alt="Avatar" class="rounded-circle mb-3" width="150" height="150" id="profileImage" />
+                }
+                <button class="btn btn-primary position-absolute bottom-0 end-0" style="border-radius: 50%;" onclick="document.getElementById('fileInput').click()">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button class="btn btn-success position-absolute bottom-0 start-0 d-none" style="border-radius: 50%;" id="uploadButton" onclick="uploadImage()">
+                    <i class="fa fa-check"></i>
+                </button>
+                <input type="file" id="fileInput" class="d-none" onchange="previewImage(event)" />
             </div>
+            <h2>@Model.Username</h2>
+            <p class="text-muted">Reputation: @Model.Reputation</p>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6 p-5">
+            <h4>Personal Info</h4>
+            <p><strong>Name:</strong> @Model.Name</p>
+            <p><strong>Department:</strong> @Model.Department</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+        </div>
+        <div class="col-md-6 p-5">
+            <h4>Activity</h4>
+            <p><strong>Total Questions:</strong> @Model.QuestionsAsked</p>
+            <p><strong>Total Answers:</strong> @Model.AnswersProvided</p>
+            <p><strong>Total Comments:</strong> @Model.CommentsMade</p>
         </div>
     </div>
 </div>
+
+<style>
+    .container {
+        max-width: 900px;
+    }
+
+    h2, h4 {
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    .position-relative {
+        position: relative;
+    }
+
+    .position-absolute {
+        position: absolute;
+    }
+</style>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script>
+// Initialize Firebase (Replace with your Firebase config)
+var firebaseConfig = {
+    apiKey: "AIzaSyAse483WtEgu5ODHwmJT_QwHzPBeN-tCMs",
+    authDomain: "aust-overflow.firebaseapp.com",
+    databaseURL: "https://aust-overflow-default-rtdb.firebaseio.com",
+    projectId: "aust-overflow",
+    storageBucket: "aust-overflow.appspot.com",
+    messagingSenderId: "597727996516",
+    appId: "1:597727996516:web:b61deb25e126e0ecd4cd71"
+};
+firebase.initializeApp(firebaseConfig);
+
+// Pass the UserId to JavaScript
+var userId = '@userId';
+let selectedFile;
+let imageUrl = "";
+
+function previewImage(event) {
+    selectedFile = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        imageUrl = e.target.result;
+        document.getElementById('profileImage').src = imageUrl;
+        document.getElementById('uploadButton').classList.remove('d-none');
+    };
+    reader.readAsDataURL(selectedFile);
+}
+
+function uploadImage() {
+    if (!selectedFile) return;
+
+    firebase.database().ref('users/' + userId).update({
+        Avatar: imageUrl
+    }).then(function() {
+        document.getElementById('uploadButton').classList.add('d-none');
+        alert("Profile image updated successfully!");
+    }).catch(function(error) {
+        console.error("Error updating profile image URL in database:", error);
+    });
+}
+</script>

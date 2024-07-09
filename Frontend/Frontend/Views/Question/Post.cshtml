@@ -8,9 +8,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Question</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Ask Question</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/Custom_Contents/Post_styles.css" />
+    <!-- Include TinyMCE with API key -->
+    <script src="https://cdn.tiny.cloud/1/ekmrv3s60wmxq6wsj7471uw5q6f3falk5lq4x0t640o58li8/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
     <div class="container">
@@ -26,28 +28,39 @@
             </div>
             <div class="form-group">
                 <label for="body">Discussion:</label>
-                <div class="toolbar">
-                    <button type="button" class="btn btn-light btn-sm" onclick="formatText('bold')"><strong>Bold</strong></button>
-                    <button type="button" class="btn btn-light btn-sm" onclick="formatText('italic')"><em>Italic</em></button>
-                    <button type="button" class="btn btn-light btn-sm" onclick="formatText('underline')"><u>Underline</u></button>
-                    <button type="button" class="btn btn-light btn-sm" onclick="formatText('inline-code')">Inline Code</button>
-                    <button type="button" class="btn btn-light btn-sm" onclick="formatText('code-block')">Code Block</button>
-                </div>
-                <textarea class="form-control" style="width:100%; height:100px;" id="body" placeholder="Write Text"></textarea>
+                <textarea id="body" placeholder="Write Text"></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group w-25">
                 <label for="image">Upload Image</label>
                 <div class="image-upload-wrapper" id="imageUploadWrapper">
                     <input type="file" class="form-control-file" id="image">
                     <div class="upload-text">Drag and drop an image or click to select</div>
                 </div>
-                <img id="imgPreview" class="img-preview mt-2 img-fluid" src="#" alt="Image Preview" style="display: none;width:50%">
+                <img id="imgPreview" class="img-preview mt-2 img-fluid" src="#" alt="Image Preview" style="display: none; width: 50%">
                 <button id="clearImage" class="btn btn-secondary mt-2" style="display: none;">Clear Image</button>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
+    <!-- Initialize TinyMCE -->
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'code',
+            toolbar: 'undo redo | blocks | fontfamily fontsize | bold italic underline strikethrough | code | addcomment showcomments | align lineheight | checklist numlist bullist indent outdent | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+            ],
+            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+        });
+
+    </script>
+
     <div class="loader" style="display:none;"></div>
 
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
@@ -70,44 +83,6 @@
         // Access session variables from Razor view and embed in JavaScript
         var userId = '@userId';
         var userName = '@userName';
-
-        // Function to format text (for demonstration)
-        function formatText(command) {
-            var textarea = document.getElementById('body');
-            var selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
-            var beforeText = textarea.value.substring(0, textarea.selectionStart);
-            var afterText = textarea.value.substring(textarea.selectionEnd, textarea.value.length);
-
-            switch (command) {
-                case 'bold':
-                    textarea.value = beforeText + "<strong>" + selectedText + "</strong>" + afterText;
-                    break;
-                case 'italic':
-                    textarea.value = beforeText + "<em>" + selectedText + "</em>" + afterText;
-                    break;
-                case 'underline':
-                    textarea.value = beforeText + "<u>" + selectedText + "</u>" + afterText;
-                    break;
-                case 'inline-code':
-                    textarea.value = beforeText + "<code>" + selectedText + "</code>" + afterText;
-                    break;
-                case 'code-block':
-                    textarea.value = beforeText + "<pre><code>" + selectedText + "</code></pre>" + afterText;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        // Function to show loader
-        function showLoader() {
-            document.querySelector('.loader').style.display = 'block';
-        }
-
-        // Function to hide loader
-        function hideLoader() {
-            document.querySelector('.loader').style.display = 'none';
-        }
 
         // Image preview functionality
         document.getElementById('image').addEventListener('change', function(event) {
@@ -145,12 +120,11 @@
         // Form submission handler
         document.getElementById('questionForm').addEventListener('submit', function (event) {
             event.preventDefault();
-            imgPreview.style.display = 'none';
             showLoader();
 
             const questionName = document.getElementById('questionName').value;
             const tagline = document.getElementById('tagline').value;
-            const body = document.getElementById('body').value;
+            const body = tinymce.get('body').getContent();
             const image = document.getElementById('image').files[0];
 
             let imageUrl = "";
@@ -165,34 +139,36 @@
             } else {
                 savePostToFirebase(questionName, tagline, body, userId, imageUrl);
             }
-
-            document.getElementById('questionForm').reset();
-            document.getElementById('imgPreview').style.display = 'none';
         });
+
+        // Function to show loader
+        function showLoader() {
+            document.querySelector('.loader').style.display = 'block';
+        }
+
+        // Function to hide loader
+        function hideLoader() {
+            document.querySelector('.loader').style.display = 'none';
+        }
 
         // Function to save post to Firebase
         function savePostToFirebase(questionName, tagline, body, userId, imageUrl) {
-            // Push the postData to Firebase under 'posts' node
             const newPostRef = firebase.database().ref().child('posts').push();
             const newPostKey = newPostRef.key; // Get the generated key (postId)
 
             // Save postData under the new postId
-            return newPostRef.set({
+            newPostRef.set({
                 Title: questionName,
                 taglines: tagline,
                 content: body,
                 userId: userId,
                 imageUrl: imageUrl,
-                upvote: 0,       // Initialize upvotes
-                downvote: 0      // Initialize downvotes
-            })
-            .then(() => {
-                // Create an 'answers' child node under the new postId
-                return firebase.database().ref(`posts/${newPostKey}/answers`).push({
-                    userId: "userId1", // Example userId
-                    name: "John Doe",  // Example user name
-                    answer: "This is an example answer."
-                });
+                upvote: {
+                    'userId': 'user1'
+                },      
+                downvote: {
+                    'userId':'user2'
+                }
             })
             .then(() => {
                 hideLoader(); // Hide loader after successful submission

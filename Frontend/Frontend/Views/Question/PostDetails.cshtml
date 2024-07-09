@@ -12,12 +12,6 @@
         margin-bottom: 0;
     }
 
-    .content {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-
     .form-group textarea {
         width: 100%;
         resize: vertical;
@@ -55,16 +49,17 @@
     </div>
 
     <div id="postContent" class="content mb-3"></div>
-    <div id="postImage" class="mb-3">Image</div>
+    <div id="postImage" class="mb-3 img-fluid">Image</div>
     <div id="voteSection" class="mb-3">
         <span id="upvoteCount">0</span> Upvotes
         <span id="downvoteCount">0</span> Downvotes
         @if (userId != null)
         {
-            <button class="btn btn-success" onclick="vote('upvote')">Upvote</button>
-            <button class="btn btn-danger" onclick="vote('downvote')">Downvote</button>
+            <button id="upvoteButton" class="btn btn-success" onclick="vote('upvote')">Upvote</button>
+            <button id="downvoteButton" class="btn btn-danger" onclick="vote('downvote')">Downvote</button>
         }
     </div>
+
 
     @if (userId != null)
     {
