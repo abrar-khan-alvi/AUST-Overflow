@@ -2,6 +2,8 @@
 
 AUST Overflow is a question and answer platform built using ASP.NET MVC integrated with Firebase services. This platform enables students and faculty to ask academic questions, provide answers, search for information, and build a knowledge-sharing community.
 
+https://deepwiki.com/abrar-khan-alvi/AUST-Overflow
+
 ## Purpose and Scope
 
 AUST Overflow provides an academic environment where users can interact with each other by posting and answering questions, searching for content, and moderating community contributions. The platform supports:
